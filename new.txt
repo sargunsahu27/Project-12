@@ -9,3 +9,28 @@
 
     <style>
         /* General styles */
+body {
+            background-image: url("https://i.pinimg.com/originals/b3/1f/c1/b31fc1bdc4add449fc3d6bc96a1c29d2.jpg");
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Contact list styles */
+        .contact-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
