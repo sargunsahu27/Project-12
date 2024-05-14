@@ -34,3 +34,46 @@ body {
             gap: 20px;
             justify-content: center;
         }
+contact-card {
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 250px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-card h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .contact-card p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Add contact form styles */
+        .contact-form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        #addContactForm input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
