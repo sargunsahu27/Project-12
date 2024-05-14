@@ -34,12 +34,7 @@ body {
             gap: 20px;
             justify-content: center;
         }
-<<<<<<< HEAD
 contact-card {
-=======
-
- .contact-card {
->>>>>>> e0f90cd24fff2f5a378c2912cc3e10ca95b51de8
             background-color: #f7f7f7;
             border: 1px solid #ddd;
             padding: 10px;
@@ -83,10 +78,7 @@ contact-card {
             border-radius: 5px;
         }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e0f90cd24fff2f5a378c2912cc3e10ca95b51de8
         #addContactForm button {
             background-color: #4caf50;
             color: white;
@@ -96,7 +88,6 @@ contact-card {
             border-radius: 5px;
             cursor: pointer;
         }
-<<<<<<< HEAD
 #addContactForm button:hover {
             background-color: #45a049;
         }
@@ -126,6 +117,154 @@ contact-card {
             border-radius: 5px;
             cursor: pointer;
         }
-=======
 
->>>>>>> e0f90cd24fff2f5a378c2912cc3e10ca95b51de8
+        .btn-success{
+            background-color: #4caf50;
+            color: white;
+        }
+        .btn-success:hover{
+            background-color: #3b893e;
+        }
+        nav h3, nav h3 a{
+            margin: 0 2rem;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #5b5855;
+            text-decoration: none;
+        }
+        .contact-list{
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h3><a href="#">MAB</a></h3>
+        <ul class="nav-item">
+            <li class="nav-items">Home</li>
+            <li class="nav-items">About</li>
+            <li class="nav-items">Contact</li>
+        </ul>
+        <ul class="nav-item">
+            <li class="nav-items"><button class="btn btn-success">Login</button></li>
+            <li class="nav-items"><button class="btn btn-success">SignUp</button></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>My Address Book </h1>
+    </header>
+    <div class="container">
+        <div class="contact-form">
+            <h2>Add a New Contact</h2>
+            <form id="addContactForm">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="phone" placeholder="Phone" required>
+                <input type="date" id="birthday" placeholder="Birthday" required>
+                <input type="text" id="address" placeholder="Address" required>
+                <button type="submit">Add Contact</button>
+            </form>
+        </div>
+        <button class="btn btn-success" id="toggleContactButton">Toggle Contacts</button>
+        <div class="contact-list" id="contact-list">
+            <!-- Contacts will be displayed here -->
+        </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script> // Sample contacts data
+        const toggleContactButton = document.getElementById("toggleContactButton")
+        toggleContactButton.addEventListener("click", ()=>{
+            toggleContactList()
+        })
+        const toggleContactList = () => {
+            const contactList = document.getElementById("contact-list")
+            if (contactList.style.display !== "none"){
+                contactList.style.display = "none"
+            } else{
+                contactList.style.display = "flex"
+            }
+        };
+
+
+        let contacts = [
+            { id: 1, name: "David", email: "david@example.com", phone: "123-456-7890" },
+            { id: 2, name: "kylie", email: "kjenner@example.com", phone: "987-654-3210" }
+        ];
+
+        // Function to display contacts in the contact-list
+        function displayContacts() {
+            const contactList = document.querySelector(".contact-list");
+
+            // Clear existing content
+            contactList.innerHTML = '';
+
+            // Loop through contacts and create elements
+            contacts.forEach(contact => {
+                const contactCard = document.createElement("div");
+                contactCard.classList.add("contact-card");
+                contactCard.innerHTML = `
+                <h2>${contact.name}</h2>
+                <p>Email: ${contact.email}</p>
+                <p>Phone: ${contact.phone}</p>
+                <p>birthday: ${contact.birthday}</p>
+                <p>address: ${contact.address}</p>
+                <button class="delete-button" data-id="${contact.id}">Delete</button>
+            `;
+                contactList.appendChild(contactCard);
+            });
+        }
+
+        // Function to add a new contact
+        function addContact(e) {
+            e.preventDefault();
+            const name = document.querySelector("#name").value;
+            const email = document.querySelector("#email").value;
+            const phone = document.querySelector("#phone").value;
+            const birthday = document.querySelector("#birthday").value;
+            const address = document.querySelector("#address").value;
+
+            if (name && email && phone) {
+                const newContact = {
+                    id: contacts.length + 1,
+                    name,
+                    email,
+                    phone,
+                    birthday,
+                    address
+                };
+
+                contacts.push(newContact);
+                displayContacts();
+
+                // Clear input fields
+                document.querySelector("#name").value = '';
+                document.querySelector("#email").value = '';
+                document.querySelector("#phone").value = '';
+                document.querySelector("#birthday").value = '';
+                document.querySelector("#address").value = '';
+            }
+        }
+
+        // Function to delete a contact
+        function deleteContact(id) {
+            contacts = contacts.filter(contact => contact.id !== id);
+            displayContacts();
+        }
+
+        // Initial display of contacts
+        displayContacts();
+
+        // Event listeners
+        document.querySelector("#addContactForm").addEventListener("submit", addContact);
+        document.querySelector(".contact-list").addEventListener("click", function (e) {
+            if (e.target.classList.contains("delete-button")) {
+                const id = parseInt(e.target.getAttribute("data-id"));
+                deleteContact(id);
+            }
+        });</script>
+
+</body>
+
+
+</html>
