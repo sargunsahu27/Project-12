@@ -34,7 +34,12 @@ body {
             gap: 20px;
             justify-content: center;
         }
+<<<<<<< HEAD
 contact-card {
+=======
+
+ .contact-card {
+>>>>>>> e0f90cd24fff2f5a378c2912cc3e10ca95b51de8
             background-color: #f7f7f7;
             border: 1px solid #ddd;
             padding: 10px;
@@ -78,7 +83,10 @@ contact-card {
             border-radius: 5px;
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e0f90cd24fff2f5a378c2912cc3e10ca95b51de8
         #addContactForm button {
             background-color: #4caf50;
             color: white;
@@ -88,6 +96,7 @@ contact-card {
             border-radius: 5px;
             cursor: pointer;
         }
+<<<<<<< HEAD
 #addContactForm button:hover {
             background-color: #45a049;
         }
@@ -117,3 +126,6 @@ contact-card {
             border-radius: 5px;
             cursor: pointer;
         }
+=======
+
+>>>>>>> e0f90cd24fff2f5a378c2912cc3e10ca95b51de8
